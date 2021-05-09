@@ -11,5 +11,8 @@
 		"strictNullChecks": false,
 		"declaration": true
 	},
-	"exclude": ["./sample/"]
+	"exclude": [
+		"./sample/",
+		"./dist/"
+	]
 }
