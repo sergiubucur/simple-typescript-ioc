@@ -1,9 +1,12 @@
 {
   "name": "simple-typescript-ioc",
   "version": "1.0.0",
+  "main": "./dist/simple-typescript-ioc.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
-    "start": "webpack serve --env development",
-    "build": "webpack --env production"
+    "start": "webpack --watch",
+    "build": "webpack",
+    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json dist"
   },
   "author": "Sergiu Bucur",
   "license": "MIT",
@@ -11,7 +14,7 @@
     "ts-loader": "9.1.2",
     "typescript": "4.2.4",
     "webpack": "5.36.2",
-    "webpack-cli": "4.7.0",
-    "webpack-dev-server": "3.11.2"
+    "webpack-bundle-analyzer": "4.4.1",
+    "webpack-cli": "4.7.0"
   }
 }

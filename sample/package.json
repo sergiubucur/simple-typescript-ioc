@@ -1,0 +1,21 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --env development",
+    "build": "webpack --env production",
+    "stats": "webpack --env production --profile --json > stats.json && webpack-bundle-analyzer stats.json dist/js"
+  },
+  "dependencies": {
+    "simple-typescript-ioc": "file:.."
+  },
+  "devDependencies": {
+    "ts-loader": "9.1.2",
+    "typescript": "4.2.4",
+    "webpack": "5.36.2",
+    "webpack-bundle-analyzer": "4.4.1",
+    "webpack-cli": "4.7.0",
+    "webpack-dev-server": "3.11.2"
+  }
+}
