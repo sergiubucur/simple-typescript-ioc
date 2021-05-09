@@ -39,13 +39,13 @@ export class Container {
 					return this.resolve(x);
 				});
 
-				// @ts-ignore
-				return new (Function.prototype.bind.apply(type.type, [null, ...dependencies])); // eslint-disable-line
+				const func = type.type as Function;
+				return new (Function.prototype.bind.apply(func, [null, ...dependencies]));
 			});
 		}
 
-		// @ts-ignore
-		return this._singleton(type, () => new type.type());
+		const ctr = type.type as any;
+		return this._singleton(type, () => new ctr());
 	}
 
 	private _registerType(id: number, type: object, dependencies: number[], singleton = false) {
